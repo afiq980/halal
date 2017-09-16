@@ -5,13 +5,15 @@ from colorthief import ColorThief
 
 
 def home(request):
-    return render(request, 'index.html', {})
+    results = "Submit a photo above to certify your food/drink. Please submit only high-res images for accuracy."
+    return render(request, 'index.html', {"results": results})
 
 
 def process_image(request):
     url = request.FILES.get('imgBase64')
-    results = dominant_color_from_url(url)[1]
-    return render(request, 'index.html', {"results": results})
+    results = dominant_color_from_url(url)
+    result = ((results[1]*1.00)/(results[0]+results[1]+results[2]))*100
+    return render(request, 'index.html', {"results": result})
 
 
 def dominant_color_from_url(url):

@@ -232,11 +232,12 @@
 
 <script>
     var results = {{ results|safe }};
-    var text = "";
 
-    if(results.length > 0){
+    if(results > 0){
         var text = "";
-        text += "The food/drink is " + results + "% halal."
+        text += "The food/drink is " + results + "% Halal."
+    } else{
+        text += "Submit a photo above to certify your food/drink. Please submit only high-res images for accuracy."
     }
 
     document.getElementById("results").innerHTML = text;
