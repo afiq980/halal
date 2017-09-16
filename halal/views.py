@@ -12,6 +12,7 @@ def home(request):
 def process_image(request):
     try:
         url = request.FILES.get('imgBase64')
+        print(url)
         results = dominant_color_from_url(url)
         result = ((results[1]*1.00)/(results[0]+results[1]+results[2]))*100
         return render(request, 'index.html', {"results": result})
