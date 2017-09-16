@@ -49,7 +49,7 @@
         height: 24px;
         font-size: 24px;
         font-family: Open Sans, sans-serif;
-        letter-spacing: 5px;
+        letter-spacing: 3px;
         text-align: center;
         display: inline-block;
         float: none;
@@ -67,7 +67,7 @@
     }
 
     .green-container {
-        background: #116466;
+        background: #ffffff;
         width: auto;
         display: block;
     }
@@ -121,7 +121,7 @@
         width: 80%;
         color: #d9b08c;
         font-size: 20px;
-        letter-spacing: 5px;
+        letter-spacing: 3px;
         text-align: left;
         margin-top: 32px;
         margin-bottom: 5px;
@@ -136,24 +136,33 @@
         text-justify: distribute;
     }
 
-    .submitButton {
+    .nextButton {
         background: #116466;
         height: 52px;
         border: 1px solid #d1e8e2;
-        color: #d1e8e2;
-        font-size: 12px;
+        color: #ffffff;
+        font-size: 20px;
     }
 
-    .submitButton:hover {
+    .nextButton:hover {
         background: #d1e8e2;
         height: 52px;
         border: 1px solid #116466;
         color: #116466;
-        font-size: 12px;
+    }
+
+    input[type="file"] {
+        display: none;
+    }
+
+    .custom-file-upload {
+        border: 2px solid #116466;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
     }
 
 </style>
-
 
 <html lang="en">
 
@@ -177,17 +186,22 @@
 
     <!-- LOG IN/REG -->
     <div class="row green-container">
-        <div class="center-block limit-width">
+        <div class="center-block limit-width" style="margin-top:30px;">
 
-            <form action="/process-image/" method="POST">{% csrf_token %}
-                <input name="imgBase64" id="imgBase64" type="file" accept="image/*" capture="camera" />
+
+            <form action="/process-image/" method="POST" enctype="multipart/form-data">{% csrf_token %}
+                <div class="center-block" style="width:150px;">
+                <label class="custom-file-upload"><input name="imgBase64" id="imgBase64" type="file"
+                                                             accept="image/*" capture="camera"/>
+                    <i class="fa fa-cloud-upload"></i> CLICK HERE TO TAKE A PHOTO
+                </label>
+                </div>
 
                 <button type="submit" class="center-block btn btn-primary btn-responsive nextButton"
-                        style="margin-top: 32px;">RESTART
+                        style="margin-top: 32px;">IS IT HALAL?
                 </button>
 
             </form>
-
 
 
         </div>
@@ -197,29 +211,13 @@
     <div class="row black-container">
         <div class="center-block limit-width">
             <div class="center-block header-container">
-                THE GAME
+                RESULTS
             </div>
 
             <div class="center-block text-container">
-                Aim of the game is to find out who are playing undercover among the citizens.
+                <p id="results"></p>
             </div>
 
-            <div class="center-block header-container">
-                HOW TO PLAY
-            </div>
-
-            <div class="center-block text-container">
-                Citizens will be assigned the same word and undercovers will be assigned a word similar to the ones
-                citizens
-                have. <br><br>
-
-                Each round, players must give a word or phrase as a clue to what their word is. After every round,
-                players
-                can collectively decide if they want to guess the undercover and reveal a player's identity, or continue
-                playing the next round without revealing anyone's identity.<br><br>
-
-                There will be an option to add Mr. White who will be assigned no word.<br><br>
-            </div>
         </div>
     </div> <!-- INTRO -->
 
@@ -230,11 +228,18 @@
         </div>
     </div> <!-- FEEDBACK -->
 
-
 </div>
 
 <script>
+    var results = {{ results|safe }};
+    var text = "";
 
+    if(results.length > 0){
+        var text = "";
+        text += "The food/drink is " + results + "% halal."
+    }
+
+    document.getElementById("results").innerHTML = text;
 </script>
 
 </body>
