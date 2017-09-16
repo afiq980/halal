@@ -191,16 +191,21 @@
 
             <form action="/process-image/" method="POST" enctype="multipart/form-data">{% csrf_token %}
                 <div class="center-block" style="width:150px;">
-                <label class="custom-file-upload"><input name="imgBase64" id="imgBase64" type="file"
-                                                             accept="image/*" capture="camera"/>
-                    <i class="fa fa-cloud-upload"></i> CLICK HERE TO TAKE A PHOTO
-                </label>
+                    <label class="custom-file-upload"><input name="imgBase64" id="imgBase64" type="file"
+                                                             accept="image/*" capture="camera">
+                        <i class="fa fa-cloud-upload"></i> CLICK HERE TO TAKE A PHOTO
+                    </label>
                 </div>
 
                 <button type="submit" class="center-block btn btn-primary btn-responsive nextButton"
                         style="margin-top: 32px;">IS IT HALAL?
                 </button>
 
+            </form>
+
+            <form action="/process-image/" method="post" enctype="multipart/form-data">{% csrf_token %}
+                <input type="file" name="video" accept="video/*" capture="environment">
+                <input type="submit" value="Upload">
             </form>
 
 
@@ -231,12 +236,17 @@
 </div>
 
 <script>
-    var results = {{ results|safe }};
+    var results = {
+    {
+        results | safe
+    }
+    }
+    ;
 
-    if(results > 0){
+    if (results > 0) {
         var text = "";
         text += "The food/drink is " + results + "% Halal."
-    } else{
+    } else {
         text += "Submit a photo above to certify your food/drink. Please submit only high-res images for accuracy."
     }
 
