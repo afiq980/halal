@@ -10,11 +10,14 @@ def home(request):
 
 
 def process_image(request):
-    url = request.FILES.get('imgBase64')
-    results = dominant_color_from_url(url)
-    result = ((results[1]*1.00)/(results[0]+results[1]+results[2]))*100
-    return render(request, 'index.html', {"results": result})
-
+    try:
+        url = request.FILES.get('imgBase64')
+        results = dominant_color_from_url(url)
+        result = ((results[1]*1.00)/(results[0]+results[1]+results[2]))*100
+        return render(request, 'index.html', {"results": result})
+    except:
+        results = "Submit a photo above to certify your food/drink. Please submit only high-res images for accuracy."
+        return render(request, 'index.html', {"results": results})
 
 def dominant_color_from_url(url):
     '''Downloads ths image file and analyzes the dominant color'''
