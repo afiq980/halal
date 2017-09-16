@@ -235,6 +235,58 @@
 
 <script>
 
+    // Grab elements, create settings, etc.
+    var video = document.getElementById('video');
+
+    // Get access to the camera!
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        // Not adding `{ audio: true }` since we only want video now
+        navigator.mediaDevices.getUserMedia({video: true}).then(function (stream) {
+            video.src = window.URL.createObjectURL(stream);
+            video.play();
+        });
+    }
+
+    // Converts canvas to an image
+    function convertCanvasToImage(canvas) {
+        var image = new Image();
+        image.src = canvas.toDataURL("image/png");
+        return image;
+    }
+
+    $("body").bind("ajaxSend", function (elm, xhr, s) {
+        if (s.type == "POST") {
+            xhr.setRequestHeader('X-CSRF-Token', getCSRFTokenValue());
+        }
+    });
+
+    var csrftoken = '{{ csrf_token }}'
+
+    // Elements for taking the snapshot
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+    var video = document.getElementById('video');
+
+    // Trigger photo take
+    document.getElementById("snap").addEventListener("click", function () {
+        context.drawImage(video, 0, 0, 640, 480);
+        var dataUrl = canvas.toDataURL();
+
+        $.ajax({
+            type: 'POST',
+            url: '/process-image/',
+            data: {
+                imgBase64: dataUrl,
+                csrfmiddlewaretoken: csrftoken,
+            },
+            success: function () {
+                alert("Thank you for your feedback!");
+            }
+        });
+
+    });
+
+
 </script>
 
 </body>
