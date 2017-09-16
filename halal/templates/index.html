@@ -151,9 +151,9 @@
         color: #116466;
     }
 
-    input[type="file"] {
-        display: none;
-    }
+    /*input[type="file"] {*/
+        /*display: none;*/
+    /*}*/
 
     .custom-file-upload {
         border: 2px solid #116466;
@@ -204,7 +204,7 @@
             </form>
 
             <form action="/process-image/" method="post" enctype="multipart/form-data">{% csrf_token %}
-                <input type="file" name="video" accept="video/*" capture="environment">
+                <input type="file" name="imgBase64" accept="image/*" capture="environment">
                 <input type="submit" value="Upload">
             </form>
 
@@ -236,12 +236,7 @@
 </div>
 
 <script>
-    var results = {
-    {
-        results | safe
-    }
-    }
-    ;
+    var results = {{results | safe}};
 
     if (results > 0) {
         var text = "";
