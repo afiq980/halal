@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c988a95-3319-43cf-bb3e-36e4e7d7df40" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Procfile" afterPath="$PROJECT_DIR$/Procfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/runtime.txt" afterPath="$PROJECT_DIR$/runtime.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/project_name/__init__.py" afterPath="$PROJECT_DIR$/halal/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/project_name/settings.py" afterPath="$PROJECT_DIR$/halal/settings.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/project_name/static/humans.txt" afterPath="$PROJECT_DIR$/halal/static/humans.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/project_name/urls.py" afterPath="$PROJECT_DIR$/halal/urls.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/project_name/wsgi.py" afterPath="$PROJECT_DIR$/halal/wsgi.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/halal/settings.py" afterPath="$PROJECT_DIR$/halal/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/halal/wsgi.py" afterPath="$PROJECT_DIR$/halal/wsgi.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,11 +15,31 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/halal/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state relative-caret-position="273">
+              <caret line="41" column="10" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/halal/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wsgi.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/halal/wsgi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="11" column="49" lean-forward="true" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -37,6 +50,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>project_name</find>
+      <find>{{</find>
+      <find>halal</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -50,6 +65,7 @@
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/runtime.txt" />
         <option value="$PROJECT_DIR$/halal/settings.py" />
+        <option value="$PROJECT_DIR$/halal/wsgi.py" />
       </list>
     </option>
   </component>
@@ -412,8 +428,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/halal/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        <state relative-caret-position="273">
+          <caret line="41" column="10" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/halal/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/halal/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="11" column="49" lean-forward="true" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
           <folding />
         </state>
       </provider>
