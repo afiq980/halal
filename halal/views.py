@@ -16,7 +16,7 @@ def process_image(request):
     print(url)
 
     results = dominant_color_from_url(url)
-    result = ((results[1]*1.00)/(results[0]+results[1]+results[2]))*100
+    result = ((results[1]*1.00)/256)*100
     return render(request, 'index.html', {"results": result})
     # except:
     #     results = "Submit a photo above to certify your food/drink. Please submit only high-res images for accuracy."
