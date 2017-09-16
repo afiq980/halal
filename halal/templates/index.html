@@ -179,13 +179,16 @@
     <div class="row green-container">
         <div class="center-block limit-width">
 
-            <input type="file" accept="image/*" capture="camera" />
+            <form action="/process-image/" method="POST">{% csrf_token %}
+                <input name="imgBase64" id="imgBase64" type="file" accept="image/*" capture="camera" />
 
-            <video id="video" width="640" height="480" autoplay></video>
-            <button id="snap">Snap Photo</button>
-            <canvas id="canvas" width="640" height="480"></canvas>
+                <button type="submit" class="center-block btn btn-primary btn-responsive nextButton"
+                        style="margin-top: 32px;">RESTART
+                </button>
 
-            <p id="options" style="margin-bottom: 30px;"></p>
+            </form>
+
+
 
         </div>
     </div> <!-- LOG IN/REG -->

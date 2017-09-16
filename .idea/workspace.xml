@@ -59,10 +59,11 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/halal/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="181" column="67" lean-forward="false" selection-start-line="181" selection-start-column="67" selection-end-line="181" selection-end-column="67" />
+            <state relative-caret-position="179">
+              <caret line="182" column="80" lean-forward="false" selection-start-line="182" selection-start-column="80" selection-end-line="182" selection-end-column="80" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -524,10 +525,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/halal/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="181" column="67" lean-forward="false" selection-start-line="181" selection-start-column="67" selection-end-line="181" selection-end-column="67" />
+        <state relative-caret-position="179">
+          <caret line="182" column="80" lean-forward="false" selection-start-line="182" selection-start-column="80" selection-end-line="182" selection-end-column="80" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
