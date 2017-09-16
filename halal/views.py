@@ -14,10 +14,8 @@ def process_image(request):
     return render(request, 'index.html', {})
 
 
-def dominant_color_from_url(url,tmp_file='tmp.jpg'):
+def dominant_color_from_url(url):
     '''Downloads ths image file and analyzes the dominant color'''
-    urllib.urlretrieve(url, tmp_file)
-    color_thief = ColorThief(tmp_file)
+    color_thief = ColorThief(url)
     dominant_color = color_thief.get_color(quality=1)
-    os.remove(tmp_file)
     return dominant_color
