@@ -25,5 +25,5 @@ def process_image(request):
 def dominant_color_from_url(url):
     '''Downloads ths image file and analyzes the dominant color'''
     color_thief = ColorThief(url)
-    dominant_color = color_thief.get_color(quality=5)
+    dominant_color = color_thief.get_color(quality=40)
     return dominant_color
