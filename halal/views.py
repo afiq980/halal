@@ -9,7 +9,7 @@ def home(request):
 
 
 def process_image(request):
-    url = request.POST['imgBase64']
+    url = request.FILES.get('imgBase64')
     print(dominant_color_from_url(url))
     return render(request, 'index.html', {})
 
